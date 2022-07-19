@@ -5,6 +5,7 @@
     --green: #15CDCB;
     --bg-dark: #212226;
     --light-grey: #E0DEDE;
+    --menu-height: 75px;
 
 }
 
@@ -44,7 +45,6 @@ button {
     border: 0;
     border-radius: 16px;
     padding: 8px 35px;
-    color: white;
     font-weight: bold;
     font-size: 18px;
 }
@@ -58,7 +58,7 @@ button {
 }
 
 header {
-    height: calc(100vh - 75px);
+    height: calc(100vh - var(--menu-height));
     display: flex;
     align-items: center;
 }
@@ -81,7 +81,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    height: var(--menu-height);
     background: var(--bg-dark);
     padding: 0 100px;
     position: sticky;
@@ -117,6 +117,9 @@ nav ul a svg {
 .about-me .container {
     width: 50%;
     padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-me .img-container {
@@ -142,8 +145,114 @@ nav ul a svg {
 
 .about-me .img-container .line.green {
     transform: rotate(-3.3deg);
-    border: 1px solid var(--green);
+    color: var(--green);
 
+}
+
+.services {
+    text-align: center;
+    margin: 150px 0;
+    padding: 0 100px;
+}
+
+.services-container, .portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.services .services-container .service-card {
+    max-width: 360px;
+    background: #2F3034;
+    border: 1px solid var(--purple);
+    border-radius: 16px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.services .services-container .service-card img {
+    margin-bottom: 40px;
+    width: 90px;
+}
+
+.service-card + .service-card {
+    margin-left: 10px;
+}
+
+.portfolio {
+    padding: 0 100px;
+    margin-bottom: 100px;
+    height: 800px;
+    text-align: center;
+    background: url(assets/portfolio-bg.png);
+}
+
+.portfolio .portfolio-container {
+    margin-top: 130px;
+}
+
+.portfolio .portfolio-container .portfolio-card {
+    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.33) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(42px);
+    border: 1px solid white;
+    border-radius: 16px;
+    max-width: 360px;
+    text-align: left;
+    padding: 50px 25px;
+}
+
+.portfolio .portfolio-container .portfolio-card .img-container {
+    margin: 0 25px 50px;
+    position: relative;
+}
+
+.portfolio-container .portfolio-card .img-container .line {
+        width: calc(100% + 24px);
+        height: calc(100% + 24px);
+        border: 1px solid var(--green);
+        transform: rotate(-3.3deg);
+        position: absolute;
+        top: -12px;
+        left: calc(50% - 50% - 12px);
+    }
+
+.portfolio .portfolio-container .portfolio-card .img-container img {
+    width: 100%;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container {
+    margin-bottom: 20px;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container ul li {
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 3px 15px;
+}
+
+.portfolio-card .language-container ul li + li {
+    margin-left: 10px;
+}
+
+.portfolio-card + .portfolio-card {
+    margin-left: 10px;
+}
+
+p {
+    margin: 0;
 }
 
 @media (max-width: 1000px) {
@@ -174,6 +283,29 @@ nav ul a svg {
     .about-me .img-container {
         margin: 70px 0;
     }
+
+    .services, .portfolio {
+        padding: 0;
+    }
+
+    .services .services-container, .portfolio .portfolio-container {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        height: 394px;
+    }
+
+    .service-card + .service-card, .portfolio-card + .portfolio-card {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .portfolio {
+        height: 100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -197,6 +329,10 @@ nav ul a svg {
 }
 
 @media (max-width: 480px) {
+    body {
+        margin-bottom: calc(var(--menu-height) + 50px);
+    }
+
     header .container {
         padding: 0 40px;
     }
@@ -222,4 +358,19 @@ nav ul a svg {
         padding: 40px;
     }
 
+    .services {
+        margin: 70px 0;
+    }
+
+    .services .services-container, .portfolio {
+        padding: 0 20px;
+    }
+}
+
+.portfolio .portfolio-container {
+    margin-top: 70px;
+}
+
+.portfolio {
+    margin: 100px 0 50px;
 }
