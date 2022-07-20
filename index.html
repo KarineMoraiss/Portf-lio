@@ -21,14 +21,14 @@
     <nav>
         <img src="assets/logo.png" alt="logo">
         <ul>
-            <a href="#"><i data-feather="user"></i>Sobre mim</a>
-            <a href="#"><i data-feather="briefcase"></i>Serviços</a>
-            <a href="#"><i data-feather="image"></i>Portfólio</a>
-            <a href="#"><i data-feather="list"></i>Currículo</a>
-            <a href="#"><i data-feather="send"></i>Contato</a>
+            <a href="#aboutme"><i data-feather="user"></i>Sobre mim</a>
+            <a href="#services"><i data-feather="briefcase"></i>Serviços</a>
+            <a href="#portfolio"><i data-feather="image"></i>Portfólio</a>
+            <a href="#curriculum"><i data-feather="list"></i>Currículo</a>
+            <a href="#contact"><i data-feather="send"></i>Contato</a>
         </ul>
     </nav>
-    <section class="about-me">
+    <section id="aboutme" class="about-me">
         <div class="container">
             <h1 class="title-green">Sobre mim</h1>
             <p>Sou do Goiás, tenho 27 anos, formada em contabilidade e gerente de varejo na Caixa Econômica Federal. Percebi que minha vida e carreira estão estagnadas e estou em busca de uma transição. Concilio meu trabalho atual com o estudo de Desenvolvimento Frontend. <br/><br/> Gosto muito de tudo o que aprendi até agora, e estou muito animada para aprender cada vez mais. </p>
@@ -39,7 +39,7 @@
             <img src="assets/profile.jpg" alt="Karine Morais">
         </div>
     </section>
-    <section class="services">
+    <section id="services" class="services">
         <h1 class="title-purple">Serviços</h1>
         <div class="services-container">
             <div class="service-card">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
         <h1 class="title-green">Portfólio</h1>
         <div class="portfolio-container">
             <div class="portfolio-card">
@@ -109,7 +109,40 @@
             </div>
         </div>
     </section>
-
+    <section id="curriculum" class="curriculum">
+        <h1 class="title-green">Currículo</h1>
+        <div class="container">
+            <img class="curriculum-img" src="assets/cv.png">
+            <div class="content">
+                <div class="curriculum-info">
+                    <span>Nome</span><b>Karine Gonçalves de Morais</b>
+                    <span>Idade</span><b>26 anos</b>
+                    <span>Formação</span><b>Análise e Des. de Sistemas</b>
+                    <span>Cidade</span><b>Alexânia GO</b>
+                    <span>Telefone</span><b>(62) 99228-8824</b>
+                    <span>Email</span><b>karinemorais.g@gmail.com</b>
+                    <span>Freelance</span><b>Disponível</b>
+                    <span>Experiência</span><b>html, css, javascript</b>
+                    <span>Idiomas</span><b>Inglês (Básico)</b>
+                </div>
+                <button class="secondary-button"> <img src="assets/save.svg" alt=""> Baixe o meu Currículo completo</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h1>Vamos trabalhar juntos?</h1>
+        <p>Se você gostou do meu trabalho e quer que eu tire sua ideia do papel ou faça parte do seu time, entre em contato comigo!</p>
+        <button onclick="window.open('https://api.whatsapp.com/send?phone=62992288824')">Entre em contato</button>
+        <div class="social-media">
+            <a href="#"><img src="assets/media1.png" alt="Instagram logo"></a>
+            <a href="#"><img src="assets/media2.png" alt="Linkedin logo"></a>
+            <a href="#"><img src="assets/media3.png" alt="Youtube logo"></a>
+            <a href="https://api.whatsapp.com/send?phone=62992288824"><img src="assets/media4.png" alt="Whatsapp logo"></a>
+        </div>
+    </section>
+    <footer>
+        <p>Made by Karine Morais - 2022</p>
+    </footer>
     <script>
         feather.replace()
     </script>
